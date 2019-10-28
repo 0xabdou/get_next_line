@@ -6,7 +6,7 @@
 /*   By: aouahib <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 19:00:45 by aouahib           #+#    #+#             */
-/*   Updated: 2019/10/23 15:13:20 by aouahib          ###   ########.fr       */
+/*   Updated: 2019/10/28 20:12:32 by aouahib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	get_next_line(int fd, char **line)
 		return (get_next_line(fd, line));
 	if (!res)
 	{
-		*line = ft_strdup(bufs[fd]);
+		*line = bufs[fd][0] ? ft_strdup(bufs[fd]) : 0;
 		free(bufs[fd]);
 		bufs[fd] = 0;
 		if (!*line)
